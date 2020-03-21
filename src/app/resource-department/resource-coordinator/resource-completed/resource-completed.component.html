@@ -1,1 +1,26 @@
-<p>resource-completed works!</p>
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <app-breadcrumb class="col-12" [breadcrumb]="breadcrumb"></app-breadcrumb>
+        </div>
+
+        <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ag-grid-angular style="height: 400px; width: 100% !important;" 
+                            class="ag-theme-balham"
+                            [suppressRowClickSelection]="true " 
+                            [rowData]="completedProjectsList" 
+                            [gridOptions]="agGridOptions"
+                            [columnDefs]="columnDefs" 
+                            [enableSorting]="true" 
+                            [enableFilter]="false" 
+                            [enableColResize]="true"
+                            [pagination]="true"
+                            (gridReady)="onGridReady($event)">
+                        </ag-grid-angular>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
