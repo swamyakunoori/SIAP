@@ -63,7 +63,7 @@ export class ResourceCompletedComponent implements OnInit {
         filter: true
       },
       {
-        headerName: 'REGIONAL MANAGER',
+        headerName: 'RESOURCE MANAGER',
         field: 'manager_id',
         sortable: true,
         filter: true
