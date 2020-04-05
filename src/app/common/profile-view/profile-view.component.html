@@ -1,0 +1,269 @@
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row mb-1">
+            <app-breadcrumb class="col-12" [breadcrumb]="breadcrumb"></app-breadcrumb>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="horizontal-form-layouts">
+                <div class="row">
+                    <div class="col-md-12" *blockUI="'projectInfo'; message: 'Loading'">
+                        <m-card [options]="options" (reloadFunction)="reloadProjectInfo($event)">
+                            <ng-container mCardBody>
+                                <form class="form form-horizontal" [formGroup]="projectInfo">
+                                    <div class="form-body">
+                                        <h4 class="form-section"><i class="feather ft-user"></i> Personal Info</h4>
+                                        <div class="form-group row mx-auto">
+                                            <label class="col-md-3 label-control" for="projectinput1">RM UserName</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="rmusername" class="form-control" placeholder="RM UserName">
+                                            </div>
+                                            <label class="col-md-3 label-control" for="projectinput1">First Name</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="firstname" class="form-control" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mx-auto">
+                                            <label class="col-md-3 label-control" for="projectinput1">Last Name</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="lasttname" class="form-control" placeholder="Last Name">
+                                            </div>
+                                            <label class="col-md-3 label-control" for="empcode">Employee Code</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="empcode" class="form-control" placeholder="Employee Code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="email">E-mail</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="email" class="form-control" placeholder="E-mail">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="repmanager">Reporting Manager</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="repmanager" class="form-control" placeholder="Reporting Manager">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="dotmanager">Dotted Manager</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="manager" class="form-control" placeholder="Dotted Manager">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="band">Band</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="band" class="form-control" placeholder="Band">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="department">Department</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="department" class="form-control" placeholder="Department">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="designation">Designation</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="designation" class="form-control" placeholder="Designation">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="location">Location</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="location" class="form-control" placeholder="Location">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="shift">Shift</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="shift" class="form-control" placeholder="Shift">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="joining">Date of Joining</label>
+                                        <div class="col-md-3">
+                                            <div class="position-relative has-icon-left">
+                                                <div class="input-group">
+                                                    <input class="form-control" placeholder="dd-mm-yyyy" name="dp"
+                                                        ngbDatepicker #d1="ngbDatepicker">
+                                                    <div class="input-group-append">
+                                                        <div class="input-group-text" (click)="d1.toggle()">
+                                                            <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-control-position">
+                                                    <i class="feather ft-message-square"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="col-md-3 label-control" for="confirmation">Confirmation Date</label>
+                                        <div class="col-md-3">
+                                            <div class="position-relative has-icon-left">
+                                                <div class="input-group">
+                                                    <input class="form-control" placeholder="dd-mm-yyyy" name="dp"
+                                                        ngbDatepicker #d2="ngbDatepicker">
+                                                    <div class="input-group-append">
+                                                        <div class="input-group-text" (click)="d2.toggle()">
+                                                            <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-control-position">
+                                                    <i class="feather ft-message-square"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="emptype">Employment Type</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="emptype" class="form-control" placeholder="Employment Type">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="prohibition">Prohibition Period</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="shift" class="form-control" placeholder="Prohibition Period">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto last">
+                                        <label class="col-md-3 label-control" for="contact">Contact Number</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="contact" class="form-control" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                    <h4 class="form-section"><i class="feather ft-clipboard"></i> Contact Details</h4>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="contact">Work Phone Number</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="contact" class="form-control" placeholder="Phone">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="contact">Alternate Number</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="contact" class="form-control" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="residence">Residence Number</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="residence" class="form-control" placeholder="Residence Number">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="communicator">Skype/IM</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="communicator" class="form-control" placeholder="Communicator">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="projectinput9">Present Address</label>
+                                        <div class="col-md-6">
+                                            <textarea id="address" rows="5" class="form-control" placeholder="Present Address"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control">Select File</label>
+                                        <div class="col-md-9">
+                                            <label id="projectinput8" class="file center-block">
+                                                <input type="file" id="file" formControlName="selectFile">
+                                                <span class="file-custom"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row last mx-auto">
+                                        <label class="col-md-3 label-control" for="address">Permanent Address</label>
+                                        <div class="col-md-9">
+                                            <textarea id="address" rows="5" class="form-control" placeholder="Permanent Address"></textarea>
+                                        </div>
+                                    </div>
+                                    <h4 class="form-section"><i class="feather ft-clipboard"></i> Personal Details</h4>
+                                    <div class="form-group row mx-auto">
+                                        <label class="col-md-3 label-control" for="gender">Gender</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="gender" class="form-control" placeholder="Gender">
+                                        </div>
+                                        <label class="col-md-3 label-control" for="bloodGroup">Blood Group</label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="bloodGroup" class="form-control" placeholder="Blood Group">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mx-auto">
+                                            <label class="col-md-3 label-control" for="birthdate">Date of Birth</label>
+                                            <div class="col-md-3">
+                                                <div class="position-relative has-icon-left">
+                                                    <div class="input-group">
+                                                        <input class="form-control" placeholder="dd-mm-yyyy" name="dp"
+                                                            ngbDatepicker #d3="ngbDatepicker">
+                                                        <div class="input-group-append">
+                                                            <div class="input-group-text" (click)="d3.toggle()">
+                                                                <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-control-position">
+                                                        <i class="feather ft-message-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <label class="col-md-3 label-control" for="marriagedate">Marriage Date</label>
+                                            <div class="col-md-3">
+                                                <div class="position-relative has-icon-left">
+                                                    <div class="input-group">
+                                                        <input class="form-control" placeholder="dd-mm-yyyy" name="dp"
+                                                            ngbDatepicker #d4="ngbDatepicker">
+                                                        <div class="input-group-append">
+                                                            <div class="input-group-text" (click)="d4.toggle()">
+                                                                <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-control-position">
+                                                        <i class="feather ft-message-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mx-auto">
+                                                <label class="col-md-3 label-control" for="status">Marrital Status</label>
+                                                <div class="col-md-3">
+                                                    <input type="text" id="status" class="form-control" placeholder="Marrital Status">
+                                                </div>
+                                                <label class="col-md-3 label-control" for="spouse">Spouse Name</label>
+                                                <div class="col-md-3">
+                                                    <input type="text" id="spouse" class="form-control" placeholder="Spouse Name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mx-auto">
+                                                    <label class="col-md-3 label-control" for="license">Driving License Number</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" id="license" class="form-control" placeholder="Driving License Number">
+                                                    </div>
+                                                    <label class="col-md-3 label-control" for="passport">Passport Number</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" id="passport" class="form-control" placeholder="Passport Number">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mx-auto">
+                                                        <label class="col-md-3 label-control" for="pan">PAN Number</label>
+                                                        <div class="col-md-3">
+                                                            <input type="text" id="pan" class="form-control" placeholder="PAN Number">
+                                                        </div>
+                                                        <label class="col-md-3 label-control" for="uan">UAN Number</label>
+                                                        <div class="col-md-3">
+                                                            <input type="text" id="uan" class="form-control" placeholder="UAN Number">
+                                                        </div>
+                                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-warning mr-1">
+                                            <i class="feather ft-x"></i> Cancel
+                                        </button>
+                                        <button type="submit" class="btn btn-primary mr-1">
+                                            <i class="la la-check"></i> Save
+                                        </button>
+                                        <button type="password" class="btn btn-primary">
+                                            <i class="la la-check"></i> Change Password
+                                        </button>
+                                    </div>
+                                </form>
+                            </ng-container>
+                        </m-card>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////-->

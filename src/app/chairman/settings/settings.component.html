@@ -1,0 +1,60 @@
+<div class="app-content content">
+        <div class="content-wrapper">
+                <div class="content-header row">
+                        <app-breadcrumb class="col-12" [breadcrumb]="breadcrumb"></app-breadcrumb>
+                </div>
+                <div class="content-body">
+                        <div class="row">
+                                <div class="col-md-4">
+                                        <div class="form-group">
+                                                <select [(ngModel)]="selectedModule" class="form-control" placeholder="select module">
+                                                        <option *ngFor="let module of modules"> {{module}} </option>
+                                                </select>
+                                        </div>
+                                </div>
+                                <div class="col-md-8">
+                                        <div class="form-actions">
+                                                <div class="form-group row">
+                                                        <div class="col-md-4">
+                                                                <button type="button" class="btn btn-warning mr-1"
+                                                                        (click)="loadMasterSettingsGrid();$event.stopPropagation();">
+                                                                        <i class="la la-check"></i> View
+                                                                </button>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                                <button type="submit" class="btn btn-primary mr-1">
+                                                                        <i class="la la-check"></i> Add Modules
+                                                                </button>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                                <button type="submit" class="btn btn-success mr-1">
+                                                                        <i class="la la-check"></i> Add MasterSettings
+                                                                </button>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+
+                        </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                        <ag-grid-angular 
+                                                style="height: 400px; width: 100% !important;" 
+                                                class="ag-theme-balham"
+                                                [suppressRowClickSelection]="true " 
+                                                [rowData]="settingsData"
+                                                [gridOptions]="AGgridOptions" 
+                                                [columnDefs]="columnDefs" 
+                                                [enableColResize]="true" 
+                                                [frameworkComponents]="frameworkComponents"
+                                                (gridReady)="onGridReady($event)">
+                                        </ag-grid-angular>
+                                </div>
+                        </div>
+                        <div>
+                                <pre>{{rowDataClicked1 | json}}</pre>
+                        </div>
+                </div>
+        </div>
+</div>

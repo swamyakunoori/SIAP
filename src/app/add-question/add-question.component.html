@@ -1,0 +1,86 @@
+<div class="app-content content">
+    <div class="content-wrapper">
+      <div class="content-header row mb-1">
+        <app-breadcrumb class="col-12" [breadcrumb]="breadcrumb"></app-breadcrumb>
+      </div>
+      <div class="content-body">
+        <section class="horizontal-grid" id="horizontal-grid">
+          <div class="row">
+            <div class="col-md-12" *blockUI="'horizontalGrid'; message:'Loading'">
+              <m-card [options]="options">
+                <ng-container mCardHeaderTitle>                  
+                </ng-container>
+                <ng-container mCardBody>
+                  <form>
+                    <div class="form-body">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Model quesiton paper:</label>                           
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">                            
+                            <input type="text" id="title" class="form-control" placeholder="*********">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Book chapter id::</label>                           
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">                            
+                            <input type="text" id="title" class="form-control" placeholder="*********">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Part:</label>                           
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">                            
+                            <input type="text" id="title" class="form-control" placeholder="Part-A">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Quesiton no:</label>                           
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">                            
+                            <input type="text" id="title" class="form-control" placeholder="Qx">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Quesiton:</label>                           
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="form-group">                            
+                            <ckeditor  [editor]="Editor" data="<p>this is working in django and backend but working in restapi</p> </br>"></ckeditor>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </ng-container>
+              </m-card>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
